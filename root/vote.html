@@ -1,0 +1,74 @@
+<html>
+<script src="js/jquery.min.js"></script>
+<script>
+    function vote() {
+        for (var i = 0; i < document.getElementsByName("option").length; i++) {
+            if (document.getElementsByName("option")[i].checked == true) {
+                console.log(document.getElementsByName("option")[i].value);
+                $.post("/vote.html", { 'votename': document.getElementsByName("option")[i].value }, function (data, status) { });
+            }
+        }
+    }
+</script>
+<head>
+	 <meta charset="utf-8" />
+</head>
+<div style="text-align:center;font-size: 50px;">
+    <b>选取你最喜欢的颜色</b>
+    <br>
+    <br>
+</div>
+
+<body>
+    <div style="text-align:center;font-size: 40px;">
+        <tr>
+            <td>
+                <img src="./yellow.jpg" title="yellow" height="200" width="200" />
+                <b><input type="radio" name="option" checked="checked" value="yellow" style="width :30px;height:30px"
+                        ; />黄</b>
+            </td>
+            <td>
+                <img src="./orange.jpg" title="orange" height="200" width="200" />
+                <b><input type="radio" name="option" value="orange" style="width :30px;height:30px" ; />
+                    橙</b>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                <img src="./red.jpg" title="red" height="200" width="200" />
+                <b><input type="radio" name="option" value="red" style="width :30px;height:30px" ; />
+                 红</b>
+            </td>
+            <td>
+                <img src="./pink.jpg" title="pink" height="200" width="200" />
+                <b><input type="radio" name="option" value="pink" style="width :30px;height:30px" ; />
+                    粉</b>
+            </td>
+            <td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                <img src="./blue.jpg" title="blue" height="200" width="200" />
+                <b><input type="radio" name="option" value="blue" style="width :30px;height:30px" ; />
+                    蓝</b>
+            </td>
+            <td>
+                <img src="./green.jpg" title="green" height="200" width="200" />
+                <b><input type="radio" name="option" value="green" style="width :30px;height:30px"
+                        ; />绿</b>
+
+            </td>
+        </tr>
+        <br>
+        <br>
+        <button type="button" onclick="vote()" style="text-align:center;font-size: 50px;">投票</button>
+
+    </div>
+    <br>
+    <h1 style="text-align:center;font-size: 50px;"><a href="./redirect.html" style="text-decoration:none">返回</a></h1>
+
+</body>
+
+</html>
